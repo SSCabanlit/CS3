@@ -1,0 +1,171 @@
+*{
+	box-sizing: inherit;
+}
+
+html body{
+	font-family: Verdana,sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+html {
+	box-sizing: border-box;
+	display: block;
+	overflow-x: hidden;
+	background-color: #FFC000;
+}
+
+body {
+	font-family: "Times New Roman", Georgia, Serif;
+	font-size: 15px;
+    line-height: 1.5;
+	margin: 0;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  font-weight: 400;
+  margin: 10px 0;
+  font-size: 36px;
+  color: white;
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+
+.top {
+	top: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+	margin: 0;
+	padding: 0;
+}
+
+.bar {
+	padding: 8px 16px;
+	letter-spacing: 4px;
+	color: #000;
+    background-color: #fff;
+	box-shadow: 2px 5px #d6d6d6;
+	width: 100%;
+    overflow: hidden;
+}
+
+.baritem {
+	padding: 8px 16px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0;
+}
+
+.button {
+	vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+}
+
+#right {
+	float: right;
+}
+
+.line-height {
+	line-height: 50px;
+}
+
+a:link, a:visited {
+  background-color: white;
+  color: black;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: grey;
+  transition-duration: 0.4s;
+}
+
+#logo {
+	top: 50%;
+	bottom: 50%;
+	left: 9%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+}
+
+.box {
+	display: flex;
+	align-items:center;
+	background-color: #c2cfcc;
+}
+
+.box2 {
+	display: flex;
+	align-items:center;
+}
+
+.item{
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	
+}
+
+.item2{
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-top: 5%;
+}
+
+#pic {
+	margin-left: 5%;
+	padding-bottom: 64px;
+	padding-top: 64px;
+}
+
+#about {
+	font-family: "Playfair Display";
+}
+
+.box2 {
+	padding-top: 54px;
+}
+
+.col {
+	padding: 12px 24px;
+    width: 100%;
+}
+
+.center {
+	text-align: center;
+	font-family: "Playfair Display";
+    letter-spacing: 5px;
+	font-size: 36px;
+	background: #FFC000;
+}
+
+h4 {
+	font-family: "Playfair Display";
+    letter-spacing: 5px;
+	font-weight: 400;
+    margin: 10px 0;
+	font-size: 20px;
+}
+
+#footer {
+	background: #e6e6e6;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
