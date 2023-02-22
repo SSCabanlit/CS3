@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			* {
+				text-align: center;
+			}
+			
+			img {
+			 width: 20%;
+			} 
+			
+		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<h2> Ako po ay feeling blooming dahil spoiled ako ni </h2>
+		<img id="myImage" src="shinee.jpg">
+		<button onclick="replaceImage()">Replace Image</button>
+		<button onclick="revertImage()">Revert Image</button>
+		
+		<script>
+			
+		function replaceImage() {
+			document.getElementById("myImage").src = "alhaitham.jpg";
+		}
+		function revertImage() {
+			document.getElementById("myImage").src = "shinee.jpg";
+		}
+	
+		</script>
+	</body>
+</html>
