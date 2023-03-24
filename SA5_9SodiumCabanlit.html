@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="Samantha Shine U. Cabanlit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>SA5_SodiumCabanlit</title>
+		<style>
+			span {color: blue; text-decoration:underline}
+			button {width: 100px; padding: 5px; background: pink;}
+		</style>
+	</head>
+	<body>
+		<h1>Welcome to Samantha's Fantasy Book Shop</h1>
+		<h2>Please select from the following items</h2>
+		<!--- provide your own 3 items and their prices in the list --->
+		<ol>
+			<li>The Hobbit & The Lord of the Rings Boxed Set (Hardcover): &#8369;4,047.29</li>
+			<li>The Chronicles of Narnia box set (Hardcover): &#8369;3,518.94</li>
+			<li>Harry Potter Hardcover Boxed Set: Books 1-7 (Hardcover): &#8369;8,365.82</li>
+		</ol>
+		<!-- the following will be used to display purchase information -->
+		<p>Item selected: <span id="item"></span></p>
+		<p>Qty bought: <span id="qty"></span></p>
+		<p>Amount to pay for the item: <span id="bill"></span></p>
+		<p>Current Total Bill: <span id="tbill">0</span></p>
+		<button onclick="Purchase()">Buy an Item</button>
+		<button onclick="clearButton()">Clear</button>
+
+		<script>
+		<!--- The const declaration creates a read-only reference to a value --->	
+			const item1 = {name: "The Hobbit & The Lord of the Rings Boxed Set(Hardcover)", price: 4047.29};
+			const item2 = {name: "The Chronicles of Narnia box set (Hardcover):", price: 3518.94};
+			const item3 = {name: "Harry Potter Hardcover Boxed Set: Books 1-7 (Hardcover)", price: 8365.82};
+    
+		<!--- Calls the funtion Purchase with an onclick event --->	
+			function Purchase() {
+				let itemNum = prompt("Enter the item number:");
+				let qty = prompt("Enter the quantity:");
+				if (qty && !isNaN(qty)) {
+					qty = parseInt(qty);
+					let item;
+					switch (itemNum) {
+						case "1":
+							item = item1;
+							break;
+						case "2":
+							item = item2;
+							break;
+						case "3":
+							item = item3;
+							break;
+						default:
+							alert("Invalid item number.");
+							return;
+					}
+		<!--- Computes the bill by multiplying an item's price with the quantity purchased --->
+				let bill = item.price * qty;
+					document.getElementById("item").innerHTML = item.name;
+					document.getElementById("qty").innerHTML = qty;
+					document.getElementById("bill").innerHTML = bill.toFixed(2);
+					let currentBill = parseFloat(document.getElementById("tbill").innerHTML);
+					currentBill += bill;
+					document.getElementById("tbill").innerHTML = currentBill.toFixed(2);
+				} else {
+					alert("Invalid quantity.");
+				}
+			}	
+		<!--- Removes input data --->
+			function clearButton() {
+				document.getElementById("item").innerHTML = "";
+				document.getElementById("qty").innerHTML = "";
+				document.getElementById("bill").innerHTML = "";
+				document.getElementById("tbill").innerHTML = "0";
+			}
+		</script>
+	</body>
+</html>
