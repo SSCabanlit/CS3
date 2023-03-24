@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="Samantha Shine U. Cabanlit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>SA7_SodiumCabanlit</title>
+		<!-- provide the necessary meta tags -->
+        <style>
+        	body {background: lightblue; 
+            	text-align: center;
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            span {font-size: 0.5em; color: maroon}
+        </style>
+
+	</head>
+	<body>
+		<h1> Your Fortune is in your name </h1>
+		<h2> Your Name is: <span id="thename"> </span></h2>
+		<h2> Today's fortune: <span id="fortune"> </span></h2>
+    
+		<button onclick="showFortune()"> Click here to enter your name </button>
+	<script>
+		function showFortune() {
+			const name = prompt("Enter your full name:");
+			document.getElementById("thename").textContent = name;
+			let sum = 0;
+			for(let i=0; i<name.length; i++) {
+				sum += parseInt(name[i], 36) - 9;
+			}
+			while(sum > 9) {
+				let temp = sum;
+				sum = 0;
+				while(temp > 0) {
+					sum += temp % 10;
+					temp = Math.floor(temp / 10);
+				}
+			}	
+			let fortune;
+			switch(sum) {
+				case 0:
+					fortune = "A day filled with blues in a pool of yellows.";
+					break;
+				case 1:
+					fortune = "They're not meant for you, move on.";
+					break;
+				case 2:
+					fortune = "You are all set for today and will have an exciting morning.";
+					break;
+				case 3:
+					fortune = "Sit back and relax and let life do its thing.";
+					break;
+				case 4:
+					fortune = "That speacial someone will text you an hour after you receive this fortune.";
+					break;
+				case 5:
+					fortune = "A day full of sunshine and a message from that special someone saying, I like you too.";
+					break;
+				case 6:
+					fortune = "Your greatest desires will manifest, and you'll have it your way..";
+					break;
+				case 7:
+					fortune = "They're truly meant for you, so seize the opportunity and make a move.";
+					break;
+				case 8:
+					fortune = "A two-beating heart that was not meant to last this lifetime. ";
+					break;
+				case 9:
+					fortune = "Magiging katulad mo si Sir Jimmy in terms of love life hehhehee";
+					break;
+			}
+			document.getElementById("fortune").textContent = fortune;
+		}
+	</script>
+	</body>
+</html>
