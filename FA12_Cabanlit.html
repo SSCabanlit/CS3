@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="Samantha Shine U. Cabanlit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>FA12-Cabanlit</title>
+		
+		<style>
+			table,th,td{
+				border: 1px solid blue;
+				border-collapse:collapse;
+			}
+			
+			th,td{
+				border: 1px solid blue;
+                text-align: center;
+                width:30px;
+                font-size:20px;
+			}
+			th{
+				color:black;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<label for="start">Enter the starting value (2-10):</label>
+		<input type=number id="start"> <br>
+		<label for="end">Enter the ending value (2-10):</label>
+		<input type=number id="end"> <br>
+		
+		<button onclick="generateTable()">Generate Table</button>
+		
+		<h2> MULTIPLICATION TABLE </h2>
+		<table id="multitable"></table>
+    
+    <script>
+		function generateTable() {
+        let start = parseInt(document.getElementById("start").value);
+        let end = parseInt(document.getElementById("end").value);
+        
+			// check if input is valid
+			if (start < 2 || start > 10) {
+			alert("Please enter numbers between 2 and 10.");
+			return;
+			}
+			else if (end < 2 || end > 10) {
+				alert("Please enter numbers between 2 and 10.");
+				return;
+			}
+			else {
+				var table = document.getElementById('multitable');
+    		    var x ="";
+				for (var i=1;i<=start;i++) {
+					x +="<tr>";
+          			for (var j=1;j<=end;j++) {
+          			if (i==1 && j==1)
+    		    		x+="<th>1</th>";
+    	    			else
+          				{
+        	  				if (i==1 || j==1)
+    		      				x+="<th>"+i*j+"</th>";
+    		    				else
+								x+="<td>"+i*j+"</td>"; 
+           				}
+        		}
+        		x +="</tr>";
+       		}
+    		table.innerHTML=x;
+			} 
+		}
+    </script>
+	</body>
+</html>
