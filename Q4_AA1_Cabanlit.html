@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="Samantha Shine U. Cabanlit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Cabanlit AA1</title>
+	</head>
+	<body>
+		<script>
+			var Rna = prompt("Enter an mRNA Sequence");
+			var cdnArray = [];
+	
+			var start = Rna.indexOf("AUG");
+	
+			if (start == -1){
+				document.write("No start Codon found");
+			}
+			var StartCodon = Rna.slice(start);
+
+			for(i=0; i < Rna.length; i+=3) {
+				var codonIden = StartCodon.slice(i, i+3)
+				cdnArray.push(codonIden);
+		
+				if(codonIden == "UAA" && codonIden == "UAG" && codonIden == "UGA"){
+				cdnArray.push(codonIden);
+				break;
+				}
+			}
+			cdnArray = cdnArray.slice(0, -1);
+			document.write("[ " ,cdnArray, " ]");
+	
+			for( i = 0; i < cdnArray.length; i++){
+
+				let codon = cdnArray[i];
+				var cdnAcid;
+	
+					switch(codon){
+					case "AUG":
+					cdnAcid = "Met";
+					break;
+		
+					case "UUU":
+					case "UUC":
+					cdnAcid = "Phe";
+					break;
+		
+					case "UUA":
+					case "UUG":
+					case "CUU":
+					case "CUC":
+					case "CUA":
+					case "CUG":
+					cdnAcid = "Leu";
+					break;
+		
+					case "AUU":
+					case "AUC":
+					case "AUA":
+					cdnAcid = "Ile";
+					break;
+		
+					case "GUU":
+					case "GUC":
+					case "GUA":
+					case "GUG":
+					cdnAcid = "Val";
+					break;
+		
+					case "UCU":
+					case "UCC":
+					case "UCA":
+					case "UCG":
+					case "AGU":
+					case "AGC":
+					cdnAcid = "Ser";
+					break;
+		
+					case "CCU":
+					case "CCC":
+					case "CCA":
+					case "CCG":
+					cdnAcid = "Pro";
+					break;
+		
+					case "ACU":
+					case "ACC":
+					case "ACA":
+					case "ACG":
+					cdnAcid = "Thr";
+					break;
+		
+					case "GCU":
+					case "GCC":
+					case "GCA":
+					case "GCG":
+					cdnAcid = "Ala";
+					break;
+		
+					case "UAU":
+					case "UAC":
+					cdnAcid = "Tyr";
+					break;
+		
+					case "UAA":
+					case "UAG":
+					case "UGA":
+					cdnAcid = "STOP";
+					break;
+		
+					case "CAU":
+					case "CAC":
+					cdnAcid = "His";
+					break;	
+		
+					case "CAA":
+					case "CAG":
+					cdnAcid = "Gln";
+					break;
+		
+					case "AAU":
+					case "AAC":
+					cdnAcid = "Asn";
+					break;
+					
+					case "AAA":
+					case "AAG":
+					cdnAcid = "Lys";
+					break;
+					
+					case "GAU":
+					case "GAC":
+					cdnAcid = "Asp";
+					break;
+					
+					case "GAA":
+					case "GAG":
+					cdnAcid = "Glu";
+					break;
+					
+					case "UGU":
+					case "UGC":
+					cdnAcid = "Cys";
+					break;
+					
+					case "UGG":
+					cdnAcid = "Trp";
+					break;
+					
+					case "CGU":
+					case "CGC":
+					case "CGA":
+					case "CGG":
+					case "AGA":
+					case "AGG":
+					cdnAcid = "Arg";
+					break;
+					
+					case "GGU":
+					case "GGC":
+					case "GGA":
+					case "GGG":
+					cdnAcid = "Gly";
+					break;
+
+					default:
+						cdnAcid = "Unknown";
+						break;
+					}
+		
+					document.write("<br/>" + codon + " --> " + cdnAcid );
+					if(cdnAcid == "STOP"){
+					break;
+					}
+				}
+			</script> 		
+	</body>
+</html>
